@@ -17,56 +17,18 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
             integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
             crossorigin="anonymous"></script>
+            <link rel="stylesheet" href="/css/sidebar.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+    <script src="/javascript/sidebar.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"></script>
 </head>
-<body class="d-flex" style="min-height: 100vh">
+<body class="d-flex" style="min-height: 100vh" id="body-pd">
 
-<div class="d-flex flex-column flex-shrink-0 p-3 text-white bg-dark" style="width: 220px">
-
-    <br><br><br><br><br><br>
-
-fvff
-    <hr>
-    <ul class="nav nav-pills flex-column mb-auto">
-        <li>
-            <a href="/dashboard" class="nav-link active" aria-current="page">
-                <svg class="bi me-2" width="16" height="16">
-                    <use xlink:href="#speedometer2"></use>
-                </svg>
-                <i class="bi bi-house">Dashboard</i>
-            </a>
-        </li>
-        <li>
-            <a href="/message" class="nav-link text-white">
-                <svg class="bi me-2" width="16" height="16">
-                    <use xlink:href="#speedometer2"></use>
-                </svg>
-                <i class="bi bi-chat-left-text">Message Board</i>
-            </a>
-        </li>
-        <li class="nav-item">
-            <a href="/myProfile.html" class="nav-link text-white">
-                <svg class="bi me-2" width="16" height="16">
-                    <use xlink:href="#home"></use>
-                </svg>
-                <i class="bi bi-person"> My Profile</i>
-            </a>
-        </li>
-        <li>
-            <a href="/settings" class="nav-link text-white">
-                <svg class="bi me-2" width="16" height="16">
-                    <use xlink:href="#table"></use>
-                </svg>
-                <i class="bi bi-gear"> Settings</i>
-            </a>
-        </li>
-    </ul>
-    <hr>
-</div>
-
-<div class="container">
-    <div class="main-body">
-
-        <!-- this class make the navbar background transparent -->
+    <header class="header" id="header">
+        <div class="header_toggle"> <i class='bx bx-menu' id="header-toggle"></i> </div>
+        <div class="header_img"> <img src="https://i.imgur.com/hczKIze.jpg" alt=""> </div>
         <nav class="navbar navbar-expand-lg navbar-dark shadow-5-strong">
             <div class="container-fluid">
                 <h1 class="navbar-brand" style="color: #1a202c">My Courses </h1>
@@ -112,6 +74,26 @@ fvff
                 </div>
             </div>
         </nav>
+
+    </header>
+    <div class="l-navbar" id="nav-bar" style="background-color: #92C4E0
+    ;">
+        <nav class="nav" >
+
+            <div> <a href="#" class="nav_logo"> <i style="margin-bottom:-1.5em ;"><img src="/assets/elle.png" alt="" style="height: 2em; width: 2em;"></i> <span class="nav_logo-name" style="margin-bottom:-1.5em ;">ELLE</span> </a>
+                <div class="nav_list"> <a href="#" class="nav_link active"> <i class='bx bx-grid-alt nav_icon'></i> <span class="nav_name" style="color:#506698                    ;">Dashboard</span> </a> <a href="#" class="nav_link"> <i class='bx bx-user nav_icon'></i> <span class="nav_name">Users</span> </a> <a href="#" class="nav_link"> <i class='bx bx-message-square-detail nav_icon'></i> <span class="nav_name">Messages</span> </a> <a href="#" class="nav_link"> <i class='bx bx-bookmark nav_icon'></i> <span class="nav_name">Bookmark</span> </a> <a href="#" class="nav_link"> <i class='bx bx-folder nav_icon'></i> <span class="nav_name">Files</span> </a> <a href="#" class="nav_link"> <i class='bx bx-bar-chart-alt-2 nav_icon'></i> <span class="nav_name">Stats</span> </a> </div>
+            </div> <a href="#" class="nav_link"> <i class='bx bx-log-out nav_icon'></i> <span class="nav_name">SignOut</span> </a>
+        </nav>
+    </div>
+    <!--Container Main start-->
+
+
+
+<div class="container">
+    <div class="main-body">
+
+        <!-- this class make the navbar background transparent -->
+
 
         <br><br><br>
 
