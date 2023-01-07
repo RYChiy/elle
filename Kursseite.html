@@ -98,15 +98,22 @@
                     <h4><a href="/Kursseite.html" style="text-decoration: none; color: black;">WPM by Prof. Dr. Jürgen
                         Schmidhuber</a></h4>
                         <img src="/assets/re.png" alt="">
-                        <button class="btn btn-primary">Kurs verlassen</button>
+                        <div class="verlassen">
+                            <div class="vmbild">
+
                         <img src="https://cdn.discordapp.com/attachments/625705811389448202/1061335890129076236/images.png" width="100" height="75" hspace="50" alt="">
-                         
+                                <span style="color: #0078d7; font-weight: bold; float: right; margin-right: 0.5em;">    VM anfordern</span>
+                    </div>
+                    <div class="verlassenbutton">
+                        <button class="btn btn-primary" >Kurs verlassen</button>
+                    </div>
+                    </div>
                         <br>
                         <br>
                     <p class="kurstext">Studierende lernen das Requirements Engineering / Anforderungsmanagement anhand von Fallstudien kennen.
-                    </p><p>
-                        Inhalte:<br>
-
+                    </p><p style="font-weight: bold;">
+                        Inhalte: </p>
+                        <p>
                         - Rolle des Requirements Engineering bei der Erstellung betrieblicher Anwendungssoftware<br>- 
                         Teildisziplinen des Requirements Management und Schnittstellen zum Projektmanagement<br>- 
                         Roadmaps zur Anforderungsermittlung <br>- Vorgehensmodelle
@@ -133,6 +140,23 @@
 
 
 <style>
+
+.verlassenbutton{
+float: right;
+
+}
+
+.vmbild{
+margin-top: 2em;
+margin-bottom: 4em;
+}
+    
+.verlassen{
+    width: 10em;
+    float: right;
+    margin-right: 5em;
+}
+
 .kurstext{
 
     margin-right:20em ;
@@ -173,6 +197,7 @@
         margin: 10px;
         box-shadow: 10px 5px 5px rgba(0, 0, 0, .125);
         min-height: 30em;
+        
         
     }
 
