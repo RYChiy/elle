@@ -31,7 +31,8 @@
 <body class="d-flex" style="min-height: 100vh" id="body-pd">
 
 <header class="header" id="header" style="background-color: #e2e8f0">
-    <div class="header_toggle"><i class='bx bx-menu' id="header-toggle" style="color: #506698; margin-top: 20px"></i></div>
+    <div class="header_toggle"><i class='bx bx-menu' id="header-toggle" style="color: #506698; margin-top: 20px"></i>
+    </div>
 
     <nav class="navbar navbar-expand-lg navbar-dark shadow-5-strong">
         <div class="container-fluid" style="margin-top: 20px">
@@ -88,9 +89,10 @@
                                                                                   style="height: 2em; width: 2em;"></i>
             <span class="nav_logo-name" style="margin-bottom:-1.5em ;">ELLE</span> </a>
             <div class="nav_list"><a href="/index.html" class="nav_link"> <i class='bx bx-grid-alt nav_icon'
-                                                                          style="color: #506698;"></i> <span
+                                                                             style="color: #506698;"></i> <span
                     class="nav_name" style="color:#506698                    ;">Meine Kurse</span> </a> <a
-                    href="/myProfile.html" class="nav_link active"> <i class='bx bx-user nav_icon' style="color: #506698;"></i>
+                    href="/myProfile.html" class="nav_link active"> <i class='bx bx-user nav_icon'
+                                                                       style="color: #506698;"></i>
                 <span class="nav_name" style="color: #506698;">Mein Profil</span> </a>   </a> <a href="/search.html"
                                                                                                  class="nav_link "> <i
                     class='bx bx-folder nav_icon' style="color: #506698; "></i> <span class="nav_name"
@@ -109,15 +111,22 @@
                 <div class="card">
                     <div class="card-body">
                         <div class="d-flex flex-column align-items-center text-center">
-                            <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="Admin"
-                                 class="rounded-circle" width="150">
-                            <div class="mt-3">
-                                <h4>John Doe</h4>
-                                <p class="text-secondary mb-1">Full Stack Developer</p>
-                                <p class="text-muted font-size-sm">Frankfurt UAS, German</p>
-                                <button class="btn btn-primary">New Picture</button>
-                                <button class="btn btn-outline-primary">Edit Bio</button>
+                            <div class="profile-pic-div">
+                                <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="Admin"
+                                     class="rounded-circle" width="150" id="photo">
+
+                                <div class="mt-3">
+                                    <h4>John Doe</h4>
+                                    <p class="text-secondary mb-1">Full Stack Developer</p>
+                                    <p class="text-muted font-size-sm">Frankfurt UAS, German</p>
+                                    <input type="file" id="file">
+                                    <label for="file" id="uploadBtn" class="btn btn-primary">New Picture</label>
+                                    <button class="btn btn-outline-primary">Edit Bio</button>
+                                </div>
                             </div>
+
+                            <script src="javascript/profilePic.js"></script>
+
                         </div>
                     </div>
                 </div>
@@ -229,6 +238,7 @@
                     </div>
                 </div>
 
+
                 <div class="card mb-3">
                     <div class="card-body">
                         <div class="row">
@@ -261,6 +271,24 @@
     body {
         background-color: #e2e8f0;
     }
+
+    #file {
+        display: none;
+    }
+
+    #photo{
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        border: 1px solid #ddd;
+        background-color: #fff;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        cursor: pointer;
+    }
+
+
 </style>
 </body>
 
