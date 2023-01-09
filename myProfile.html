@@ -120,9 +120,9 @@
 
                                     <p class="text-secondary mb-1" id="firstLine">Full Stack Developer</p>
                                     <label></label>
-                                    <input type="text" id="firstLine1"><br>
+                                    <input type="text" id="firstLine1" hidden><br>
                                     <p class="text-muted font-size-sm" id="secondLine">Frankfurt UAS, German</p>
-                                    <input type="text" id="secondLine1" style="margin-bottom: 10px"><br>
+                                    <input type="text" id="secondLine1" style="margin-bottom: 10px" hidden><br>
                                     <input type="file" id="file">
                                     <label for="file" id="uploadBtn" class="btn btn-primary">New Picture</label>
                                     <button class="btn btn-outline-primary" onclick="editBio()">Edit Bio</button>
@@ -299,15 +299,22 @@
 
     function editBio(){
 
+        document.getElementById("firstLine1").hidden = false;
+        document.getElementById("secondLine1").hidden = false;
 
         const firstLine = document.getElementById("firstLine");
         const secondLine = document.getElementById("secondLine");
         const newline1 = document.getElementById("firstLine1").value;
         const newLine2 = document.getElementById("secondLine1").value;
 
+        document.getElementById("firstLine1").value = "";
+        document.getElementById("secondLine1").value = "";
+
         firstLine.innerHTML = newline1;
         secondLine.innerHTML = newLine2;
+
     }
+
 
 </script>
 
