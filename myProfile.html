@@ -117,11 +117,15 @@
 
                                 <div class="mt-3">
                                     <h4>John Doe</h4>
-                                    <p class="text-secondary mb-1">Full Stack Developer</p>
-                                    <p class="text-muted font-size-sm">Frankfurt UAS, German</p>
+
+                                    <p class="text-secondary mb-1" id="firstLine">Full Stack Developer</p>
+                                    <label></label>
+                                    <input type="text" id="firstLine1"><br>
+                                    <p class="text-muted font-size-sm" id="secondLine">Frankfurt UAS, German</p>
+                                    <input type="text" id="secondLine1" style="margin-bottom: 10px"><br>
                                     <input type="file" id="file">
                                     <label for="file" id="uploadBtn" class="btn btn-primary">New Picture</label>
-                                    <button class="btn btn-outline-primary">Edit Bio</button>
+                                    <button class="btn btn-outline-primary" onclick="editBio()">Edit Bio</button>
                                 </div>
                             </div>
 
@@ -290,6 +294,23 @@
 
 
 </style>
+
+<script>
+
+    function editBio(){
+
+
+        const firstLine = document.getElementById("firstLine");
+        const secondLine = document.getElementById("secondLine");
+        const newline1 = document.getElementById("firstLine1").value;
+        const newLine2 = document.getElementById("secondLine1").value;
+
+        firstLine.innerHTML = newline1;
+        secondLine.innerHTML = newLine2;
+    }
+
+</script>
+
 </body>
 
 
