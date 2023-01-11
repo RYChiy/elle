@@ -260,6 +260,8 @@
 
 <script>
 
+
+
     /* this function should be called when the page is loaded
        it should add the courses to the course-container
 */
@@ -267,21 +269,26 @@
     const courses = [
         {
             title: 'WPM by Prof. Dr. Jürgen Schmidhuber',
-            content: 'Content for Blaue'
+            content: 'Content for Blaue',
+            link:'/KursseiteWPM.html'
         },
         {
             title: 'Prozessgetriebene Anwendungssysteme by Prof. Dr. Thomas Kühne',
-            content: 'Content for Kühne'
+            content: 'Content for Kühne',
+            link:'/KursseitePAS.html'
         },
         {
             title: 'Software Engineering by Prof. Hans-Joachim Hof',
-            content: 'Content for Hof'
+            content: 'Content for Hof',
+            link:'/KursseiteSWE.html'
         },
         {
             title: 'Algorithmen und Datenstrukturen by Prof. Dr. Jens Palsberg',
-            content: 'Content for Palsberg'
+            content: 'Content for Palsberg',
+            link:'/KursseiteAUD.html'
         }
     ];
+    
 
     console.log(courses);
 
@@ -297,7 +304,7 @@
         cardBody.classList.add('card-body');
 
 
-        cardBody.innerHTML = `<h4><a href="/Kursseite.html" style="text-decoration: none; color: black;">${item.title}</a></h4><p>${item.content}</p>`;
+        cardBody.innerHTML = `<h4><a href="${item.link}" style="text-decoration: none; color: black;">${item.title}</a></h4><p>${item.content}</p>`;
 
         // Füge den Karteninhalt zur Karte hinzu
         card.appendChild(cardBody);

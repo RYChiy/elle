@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css"
+          integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+            integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+            crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js"
+            integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/"
+            crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+            crossorigin="anonymous"></script>
+            <link rel="stylesheet" href="/css/sidebar.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+    <script src="/javascript/sidebar.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+<body class="d-flex" style="min-height: 100vh" id="body-pd">
+
+    <header class="header" id="header" style="background-color: #e2e8f0">
+        <div class="header_toggle"> <i class='bx bx-menu' id="header-toggle" style="color: #506698; margin-top: 20px"></i> </div>
+        
+        <nav class="navbar navbar-expand-lg navbar-dark shadow-5-strong">
+            <div class="container-fluid" style="margin-top: 20px">
+                <h1 class="navbar-brand" style="color: #1a202c">WPM by Prof. Dr. Jürgen Schmidhuber </h1>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <form class="d-flex">
+                                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                            </form>
+                        </li>
+                        <li class="nav-item">
+                            <svg width="24px" height="24px" viewBox="0 0 24 24" fill="none" style="margin: 5px"
+                                 xmlns="http://www.w3.org/2000/svg">
+                                <path d="M6 22C5.00797 21.9974 4.05718 21.6028 3.35478 20.9023C2.65237 20.2018 2.25527 19.252 2.25 18.26V9.26C2.25264 8.26625 2.64858 7.31396 3.35127 6.61127C4.05396 5.90858 5.00625 5.51264 6 5.51H7C7.18271 5.5312 7.35127 5.61881 7.47361 5.75617C7.59595 5.89353 7.66354 6.07106 7.66354 6.255C7.66354 6.43894 7.59595 6.61647 7.47361 6.75383C7.35127 6.89119 7.18271 6.9788 7 7H6C5.70162 6.99731 5.40571 7.05426 5.12964 7.16751C4.85357 7.28076 4.60292 7.44803 4.39239 7.65949C4.18186 7.87095 4.0157 8.12234 3.90367 8.39891C3.79164 8.67547 3.73599 8.97163 3.74 9.27V18.27C3.73999 18.5659 3.79858 18.8588 3.9124 19.1319C4.02622 19.4049 4.19301 19.6528 4.40314 19.861C4.61326 20.0693 4.86256 20.2339 5.13665 20.3453C5.41073 20.4567 5.70416 20.5126 6 20.51H18C18.295 20.51 18.5871 20.4517 18.8595 20.3385C19.132 20.2253 19.3793 20.0595 19.5875 19.8504C19.7956 19.6413 19.9604 19.3932 20.0724 19.1203C20.1843 18.8474 20.2413 18.555 20.24 18.26V9.26C20.2413 8.96453 20.1844 8.67168 20.0726 8.3982C19.9607 8.12471 19.7961 7.87594 19.5881 7.66607C19.3801 7.45621 19.1328 7.28938 18.8603 7.17509C18.5878 7.06081 18.2955 7.00131 18 7H17C16.8028 7.00002 16.6135 6.92237 16.4732 6.78388C16.3328 6.64538 16.2526 6.45717 16.25 6.26C16.2473 6.15936 16.2647 6.0592 16.3011 5.96533C16.3375 5.87145 16.3921 5.78574 16.4619 5.71317C16.5317 5.64061 16.6152 5.58262 16.7076 5.54259C16.7999 5.50257 16.8993 5.48129 17 5.48H18C18.992 5.48262 19.9428 5.87719 20.6452 6.57772C21.3476 7.27825 21.7447 8.22799 21.75 9.22V18.22C21.7553 18.7153 21.6621 19.2068 21.4759 19.6658C21.2897 20.1249 21.0142 20.5424 20.6653 20.894C20.3164 21.2457 19.9012 21.5246 19.4436 21.7144C18.9861 21.9043 18.4954 22.0014 18 22H6Z"
+                                      fill="black"/>
+                                <path d="M10 7C9.80109 7 9.61032 6.92098 9.46967 6.78033C9.32902 6.63968 9.25 6.44891 9.25 6.25C9.25 6.05109 9.32902 5.86032 9.46967 5.71967C9.61032 5.57902 9.80109 5.5 10 5.5H14C14.1989 5.5 14.3897 5.57902 14.5303 5.71967C14.671 5.86032 14.75 6.05109 14.75 6.25C14.75 6.44891 14.671 6.63968 14.5303 6.78033C14.3897 6.92098 14.1989 7 14 7H10Z"
+                                      fill="black"/>
+                                <path d="M8.48001 8.51C7.88327 8.51 7.31098 8.27295 6.88902 7.85099C6.46706 7.42903 6.23001 6.85674 6.23001 6.26V4.26C6.22737 3.96416 6.28336 3.67073 6.39474 3.39665C6.50613 3.12256 6.67071 2.87326 6.87898 2.66314C7.08724 2.45301 7.33507 2.28622 7.60815 2.1724C7.88123 2.05858 8.17416 1.99999 8.47001 2C9.06422 2.00261 9.63349 2.23913 10.0546 2.65836C10.4757 3.0776 10.7148 3.64581 10.72 4.24V6.24C10.7216 6.53476 10.665 6.82694 10.5535 7.09978C10.4419 7.37263 10.2776 7.62077 10.07 7.83C9.64824 8.25299 9.07731 8.49357 8.48001 8.5V8.51ZM8.48001 3.51C8.38198 3.50999 8.28493 3.52946 8.19449 3.56727C8.10406 3.60508 8.02203 3.66049 7.95318 3.73026C7.88433 3.80004 7.83004 3.8828 7.79344 3.97374C7.75685 4.06468 7.73868 4.16198 7.74001 4.26V6.26C7.74524 6.36134 7.77098 6.46056 7.81567 6.55166C7.86036 6.64276 7.92307 6.72384 8.00001 6.79C8.12679 6.9195 8.29886 6.99477 8.48001 7C8.67983 6.99737 8.87058 6.91614 9.01096 6.7739C9.15133 6.63165 9.23003 6.43984 9.23001 6.24V4.24C9.2248 4.04457 9.14348 3.85891 9.00339 3.72255C8.8633 3.5862 8.6755 3.50993 8.48001 3.51Z"
+                                      fill="black"/>
+                                <path d="M15.48 8.49C15.1844 8.4914 14.8915 8.43373 14.6184 8.3204C14.3454 8.20706 14.0977 8.04034 13.89 7.83C13.4679 7.40845 13.2305 6.83654 13.23 6.24V4.24C13.23 3.64591 13.466 3.07616 13.8861 2.65608C14.3062 2.236 14.8759 2 15.47 2C16.0642 2.00261 16.6335 2.23913 17.0546 2.65836C17.4757 3.0776 17.7148 3.64581 17.72 4.24V6.24C17.7213 6.53547 17.6644 6.82832 17.5526 7.1018C17.4407 7.37529 17.2761 7.62406 17.0681 7.83393C16.8601 8.04379 16.6128 8.21062 16.3403 8.32491C16.0678 8.43919 15.7755 8.49869 15.48 8.5V8.49ZM15.48 3.49C15.2828 3.49263 15.0946 3.57281 14.9561 3.71317C14.8176 3.85354 14.74 4.04281 14.74 4.24V6.24C14.74 6.43891 14.819 6.62968 14.9597 6.77033C15.1003 6.91098 15.2911 6.99 15.49 6.99C15.5885 6.99 15.686 6.9706 15.777 6.93291C15.868 6.89522 15.9507 6.83997 16.0203 6.77033C16.09 6.70069 16.1452 6.61801 16.1829 6.52701C16.2206 6.43602 16.24 6.33849 16.24 6.24V4.24C16.24 4.14066 16.2203 4.04231 16.182 3.95066C16.1437 3.85901 16.0875 3.77588 16.0168 3.7061C15.9461 3.63633 15.8622 3.58129 15.7701 3.54419C15.6779 3.5071 15.5793 3.48868 15.48 3.49Z"
+                                      fill="black"/>
+                                <path d="M3 12C2.80109 12 2.61032 11.921 2.46967 11.7803C2.32902 11.6397 2.25 11.4489 2.25 11.25C2.25 11.0511 2.32902 10.8603 2.46967 10.7197C2.61032 10.579 2.80109 10.5 3 10.5H21C21.1989 10.5 21.3897 10.579 21.5303 10.7197C21.671 10.8603 21.75 11.0511 21.75 11.25C21.7528 11.3492 21.7352 11.448 21.6985 11.5402C21.6618 11.6325 21.6067 11.7163 21.5365 11.7865C21.4663 11.8567 21.3825 11.9118 21.2902 11.9485C21.198 11.9852 21.0992 12.0028 21 12H3Z"
+                                      fill="black"/>
+                            </svg>
+                        </li>
+                        <li>
+                            <svg width="24px" height="24px" viewBox="-32 0 512 512" style="margin: 5px"
+                                 xmlns="http://www.w3.org/2000/svg">
+                                <path d="M439.39 362.29c-19.32-20.76-55.47-51.99-55.47-154.29 0-77.7-54.48-139.9-127.94-155.16V32c0-17.67-14.32-32-31.98-32s-31.98 14.33-31.98 32v20.84C118.56 68.1 64.08 130.3 64.08 208c0 102.3-36.15 133.53-55.47 154.29-6 6.45-8.66 14.16-8.61 21.71.11 16.4 12.98 32 32.1 32h383.8c19.12 0 32-15.6 32.1-32 .05-7.55-2.61-15.27-8.61-21.71zM67.53 368c21.22-27.97 44.42-74.33 44.53-159.42 0-.2-.06-.38-.06-.58 0-61.86 50.14-112 112-112s112 50.14 112 112c0 .2-.06.38-.06.58.11 85.1 23.31 131.46 44.53 159.42H67.53zM224 512c35.32 0 63.97-28.65 63.97-64H160.03c0 35.35 28.65 64 63.97 64z"/>
+                            </svg>
+                        </li>
+                        <li>
+                            <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="Admin"
+                                 class="rounded-circle" width="50">
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+    </header>
+    <div class="l-navbar" id="nav-bar" style="background-color: #92C4E0
+    ;">
+        <nav class="nav" >
+
+            <div> <a href="#" class="nav_logo"> <i style="margin-bottom:-1.5em ;"><img src="/assets/elle.png" alt="" style="height: 2em; width: 2em;"></i> <span class="nav_logo-name" style="margin-bottom:-1.5em ;">ELLE</span> </a>
+                <div class="nav_list"> <a href="/index.html" class="nav_link active"> <i class='bx bx-grid-alt nav_icon' style="color: #506698;"></i> <span class="nav_name" style="color:#506698                    ;">Meine Kurse</span> </a> <a href="/myProfile.html" class="nav_link"> <i class='bx bx-user nav_icon' style="color: #506698;"></i> <span class="nav_name" style="color: #506698;">Mein Profil</span> </a>   </a> <a href="/search.html" class="nav_link"> <i class='bx bx-folder nav_icon' style="color: #506698; "></i> <span class="nav_name" style="color: #506698;">Kurse Suchen</span> </a>  </div>
+            </div> <a href="#" class="nav_link"> <i class='bx bx-log-out nav_icon' style="color: #506698;"></i> <span class="nav_name" style="color: #506698;">SignOut</span> </a>
+        </nav>
+    </div>
+    <!--Container Main start-->
+    <div class="container" style="margin-top: 5em; ">
+        <div class="main-body">
+
+    <div class="row gutters-sm">
+        <div class="col-md-10">
+            <div class="card" >
+                <div class="card-body">
+
+
+                    <h4><a href="/Kursseite.html" style="text-decoration: none; color: black;">Software Engineering by Prof. Hans-Joachim Hof</a></h4>
+                        <img src="/assets/re.png" alt="">
+                        <div class="verlassen">
+                            <div class="vmbild">
+
+                        <img src="https://cdn.discordapp.com/attachments/625705811389448202/1061335890129076236/images.png" width="100" height="75" hspace="50" alt="">
+                                <span style="color: #0078d7; font-weight: bold; float: right; margin-right: 0.5em;">    VM anfordern</span>
+                    </div>
+                    <div class="verlassenbutton">
+                        <button class="btn btn-primary" >Kurs verlassen</button>
+                    </div>
+                    </div>
+                        <br>
+                        <br>
+                    <p class="kurstext">Studierende lernen das Requirements Engineering / Anforderungsmanagement anhand von Fallstudien kennen.
+                    </p><p style="font-weight: bold;">
+                        Inhalte: </p>
+                        <p>
+                        - Rolle des Requirements Engineering bei der Erstellung betrieblicher Anwendungssoftware<br>- 
+                        Teildisziplinen des Requirements Management und Schnittstellen zum Projektmanagement<br>- 
+                        Roadmaps zur Anforderungsermittlung <br>- Vorgehensmodelle
+                        Arten von Anforderungen<br>- 
+                        Tools und Techniken / Modelle zur Anforderungsermittlung
+                        </p>
+
+                    <!--
+                    <div id="course-container">
+                       Card elements will be added here
+                    </div>
+                    -->
+
+                </div>
+           
+        </div>
+    </div>
+
+        </div>
+    </div>
+    
+
+</body>
+
+
+<style>
+
+.verlassenbutton{
+float: right;
+
+}
+
+.vmbild{
+margin-top: 2em;
+margin-bottom: 4em;
+}
+    
+.verlassen{
+    width: 10em;
+    float: right;
+    margin-right: 5em;
+}
+
+.kurstext{
+
+    margin-right:20em ;
+
+}
+    .dropdown_sort {
+        float: middle;
+    }
+
+    .dropdown_filter {
+        float: middle;
+    }
+
+    body {
+        color: #1a202c;
+        text-align: left;
+        background-color: #e2e8f0;
+    }
+
+    .main-body {
+        padding: 15px;
+    }
+
+    .card {
+        box-shadow: 0 1px 3px 0 rgba(0, 0, 0, .1), 0 1px 2px 0 rgba(0, 0, 0, .06);
+    }
+
+    .card {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        min-width: 20em;
+        word-wrap: break-word;
+        background-color: #fff;
+        background-clip: border-box;
+        border: 0 solid rgba(0, 0, 0, .125);
+        border-radius: .25rem;
+        margin: 10px;
+        box-shadow: 10px 5px 5px rgba(0, 0, 0, .125);
+        min-height: 30em;
+        
+        
+    }
+
+    .card-body {
+        flex: 1 1 auto;
+        min-height: 1px;
+        padding: 1rem;
+    }
+
+    .gutters-sm {
+        margin-right: -8px;
+        margin-left: -8px;
+    }
+
+    .gutters-sm > .col, .gutters-sm > [class*=col-] {
+        padding-right: 8px;
+        padding-left: 8px;
+    }
+
+    .mb-3, .my-3 {
+        margin-bottom: 1rem !important;
+    }
+
+    .bg-gray-300 {
+        background-color: #e2e8f0;
+    }
+
+    .h-100 {
+        height: 100% !important;
+    }
+
+    .shadow-none {
+        box-shadow: none !important;
+    }
+
+</style>
+
+<script>
+
+    
+
+</script>
+
+</html>
