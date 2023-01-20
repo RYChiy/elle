@@ -103,28 +103,40 @@
 <div class="container">
     <div class="main-body">
 
-        <br><br>
+        <br><br><br><br><br><br>
 
+        <div class="row">
+            <div class="col">
 
-        <div class="row gutters-sm">
-            <div class="col-md-4 mb-3">
-                <div>
-                    <br><br><br><br>
-                    <h4>Search your Course</h4>
-                    <div class="input-group col-md-4">
-                        <input class="form-control py-2" type="search" placeholder="search" id="example-search-input">
-                        <span class="input-group-append">
+                <h4>Search your Course</h4>
+                <div class="input-group col-md-4">
+                    <input class="form-control py-2" type="search" placeholder="search" id="example-search-input">
+                    <span class="input-group-append">
                     <button class="btn btn-outline-secondary" type="button">
                     <i class="bi bi-search"></i>
                     </button>
                 </span>
+                </div>
+
+            </div>
+            <div class="col">
+                <div class="dropdown_sort">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" id="sortDropdown"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="width: 400px; margin-top: 35px">
+                        Sort Courses
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <a class="dropdown-item" href="#">Neu-zu-Alt</a>
+                        <a class="dropdown-item" href="#">Alt-zu-Neu</a>
+                        <a class="dropdown-item" href="#">A-Z</a>
+                        <a class="dropdown-item" href="#">Z-A</a>
                     </div>
-                    <br><br>
                 </div>
             </div>
+        </div>
 
             <div class="col-md-10" id="course-container">
-                <p style="margin-bottom: 2px; margin-left: 12px">all courses</p>
+                <p style="margin-bottom: 2px; margin-left: 12px; margin-top: 70px">all courses</p>
                  <!--
                 <div class="card">
                     <div class="card-body">
@@ -186,7 +198,7 @@
 
 </body>
 <script>
-    
+
 
 
     /* this function should be called when the page is loaded
@@ -221,7 +233,7 @@
             link: 'Content for Palsberg'
         }
     ];
-    
+
 
     console.log(courses);
 
@@ -235,7 +247,7 @@
         // Erstelle ein "div"-Element für den Karteninhalt
         const cardBody = document.createElement('div');
         cardBody.classList.add('card-body');
-        
+
 
         cardBody.innerHTML = `<h6><a href="${item.link}" style="text-decoration: none; color: black;">${item.title}</a></h6>
 `;
