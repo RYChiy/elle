@@ -283,7 +283,7 @@ async function login(){
   headers: {'Content-Type': 'application/json'}, 
   body: JSON.stringify(User)
 }).then(res => {
-  console.log("Request complete! response:", res);
+  console.log("Request complete! response:", res.data);
   console.log(res.headers)
 });
 
