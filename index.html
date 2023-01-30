@@ -272,12 +272,15 @@
 }
 
 async function login(url){
+
+    const user={
+        email: "issam-boutachdat@stud.fra-uas.de",
+   hashedPassword: 12345
+    }
+
     const response = await fetch("http://localhost:8081/login", {
 method: 'POST',
-body: `{
-   "email": "issam-boutachdat@stud.fra-uas.de",
-   "hashedPassword": "12345"
-  }`,
+body: user,
 });
 
 response.json().then(data => {
