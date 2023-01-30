@@ -141,6 +141,7 @@
         </div>
 
         <br><br><br>
+        <button onclick="fetchAsync('localhost:8081/course/all')">Get Courses</button>
 
         <div class="row gutters-sm">
             <div class="col-md-10">
@@ -259,6 +260,14 @@
 </style>
 
 <script>
+    
+    
+        async function fetchAsync (url) {
+  let response = await fetch(url); 
+  let data = await response.json();
+  console.log(data);
+  return data;
+}
 
 
 
