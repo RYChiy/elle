@@ -278,14 +278,13 @@ async function login(url){
    hashedPassword: 12345
     }
 
-    const response = await fetch("http://localhost:8081/login", {
+    let response = await fetch("http://localhost:8081/login", {
 method: 'POST',
 body: user,
 });
+let data = await response.json();
+console.log(data);
 
-response.json().then(data => {
-  console.log(data);
-});
 }
 
 
