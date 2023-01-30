@@ -264,14 +264,14 @@
 <script>
     
     
-        async function fetchAsync (url) {
+        async function fetchAsync () {
   let response = await fetch("http://localhost:8081/course/all"); 
   let data = await response.json();
   console.log(data);
   return data;
 }
 
-async function login(url){
+async function login(){
 
     const User={
         email: "issam.boutachdat@stud.fra-uas.de",
