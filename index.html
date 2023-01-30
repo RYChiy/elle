@@ -143,6 +143,8 @@
         <br><br><br>
         <button onclick="fetchAsync()">Get Courses</button>
 
+        <button onclick="login()">Login</button>
+
         <div class="row gutters-sm">
             <div class="col-md-10">
                 <div id="course-container">
@@ -267,6 +269,20 @@
   let data = await response.json();
   console.log(data);
   return data;
+}
+
+async function login(url){
+    const response = await fetch("http://localhost:8081/login", {
+method: 'POST',
+body: `{
+   "email": "issam-boutachdat@stud.fra-uas.de",
+   "hashedPassword": "12345"
+  }`,
+});
+
+response.json().then(data => {
+  console.log(data);
+});
 }
 
 
