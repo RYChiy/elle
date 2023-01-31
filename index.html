@@ -141,7 +141,7 @@
         </div>
 
         <br><br><br>
-        <button onclick="fetchAsync()">Get Courses</button>
+        <button onclick="getCourses()">Get Courses</button>
 
         <button onclick="login()">Login</button>
 
@@ -262,12 +262,38 @@
 </style>
 
 <script>
+    var courses=[];
     
     
-        async function fetchAsync () {
+        async function getCourses () {
   let response = await fetch("http://localhost:8081/course/all"); 
   let data = await response.json();
   console.log(data);
+  courses.push(data);
+  console.log(courses);
+  courses = data;
+
+    const cardContainer = document.getElementById('course-container');
+
+    data.forEach(function (item) {
+        // Erstelle eine neue Karte
+        const card = document.createElement('div');
+        card.classList.add('card');
+
+        // Erstelle ein "div"-Element für den Karteninhalt
+        const cardBody = document.createElement('div');
+        cardBody.classList.add('card-body');
+
+
+        cardBody.innerHTML = `<h4><a href="${item.link}" style="text-decoration: none; color: black;">${item.courseName }</a></h4><p>${item.description}</p>`;
+
+        // Füge den Karteninhalt zur Karte hinzu
+        card.appendChild(cardBody);
+
+        // Füge die Karte dem DOM hinzu
+        cardContainer.appendChild(card);
+    });
+  
   return data;
 }
 
@@ -278,27 +304,24 @@ async function login(){
    hashedPassword: 12345
     }
 
-    fetch("http://localhost:8081/login", {
+    let response=   await fetch("http://localhost:8081/login", {
   method: "POST",
   headers: {'Content-Type': 'application/json'}, 
   body: JSON.stringify(User)
-}).then(res => {
-  console.log("Request complete! response:", res.body);
-  //console.log(res.headers)
 });
-
-
+let data =await  response.json();
+console.log(data);
+localStorage.setItem("token", data);
 
 
 }
-
 
 
     /* this function should be called when the page is loaded
        it should add the courses to the course-container
 */
 
-    const courses = [
+   /* const courses = [
         {
             title: 'WPM by Prof. Dr. Jürgen Schmidhuber',
             content: 'Content for Blaue',
@@ -320,30 +343,9 @@ async function login(){
             link:'/KursseiteAUD.html'
         }
     ];
+    */
+
     
-
-    console.log(courses);
-
-    const cardContainer = document.getElementById('course-container');
-
-    courses.forEach(function (item) {
-        // Erstelle eine neue Karte
-        const card = document.createElement('div');
-        card.classList.add('card');
-
-        // Erstelle ein "div"-Element für den Karteninhalt
-        const cardBody = document.createElement('div');
-        cardBody.classList.add('card-body');
-
-
-        cardBody.innerHTML = `<h4><a href="${item.link}" style="text-decoration: none; color: black;">${item.title}</a></h4><p>${item.content}</p>`;
-
-        // Füge den Karteninhalt zur Karte hinzu
-        card.appendChild(cardBody);
-
-        // Füge die Karte dem DOM hinzu
-        cardContainer.appendChild(card);
-    });
 
 
 </script>
