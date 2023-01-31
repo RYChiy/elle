@@ -41,10 +41,14 @@
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify(User)
         });
-        let data =await  response.json();
+        if(response.ok){
+            let data =await  response.json();
         console.log(data);
         localStorage.setItem("token", data);
-
+        window.location.href = "https://majestic-cranachan-bc5242.netlify.app/";
+        }
+        else{ throw new Error("HTTP status " + response.status);}
+        
 
     }
 
