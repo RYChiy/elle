@@ -94,7 +94,7 @@
             </a></div>
         </div>
         <a href="#" class="nav_link"> <i class='bx bx-log-out nav_icon' style="color: #506698;"></i> <span
-                class="nav_name" style="color: #506698;">SignOut</span> </a>
+                class="nav_name" style="color: #506698;" onclick="logOut()">SignOut</span> </a>
     </nav>
 </div>
 <!--Container Main start-->
@@ -198,6 +198,10 @@
 </body>
 <script>
 
+function logOut(){
+        localStorage.setItem("token","")
+        window.location.href = "https://63d924f3c5931e000830e519--majestic-cranachan-bc5242.netlify.app/login";
+    }
 
 
     /* this function should be called when the page is loaded
