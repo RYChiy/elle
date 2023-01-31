@@ -203,8 +203,38 @@
     /* this function should be called when the page is loaded
        it should add the courses to the course-container
 */
+async function fetchAsync() {
+        let response = await fetch("http://localhost:8081/course/all");
+        let data = await response.json();
+        console.log(data);
 
-    const courses = [
+        const cardContainer = document.getElementById('course-container');
+
+        data.forEach(function (item) {
+            // Erstelle eine neue Karte
+            const card = document.createElement('div');
+            card.classList.add('card');
+
+            // Erstelle ein "div"-Element für den Karteninhalt
+            const cardBody = document.createElement('div');
+            cardBody.classList.add('card-body');
+
+
+            cardBody.innerHTML = `<h4><a href="${item.link}" style="text-decoration: none; color: black;">${item.courseName}</a></h4><p>${item.studyingDescription}</p>`;
+
+            // Füge den Karteninhalt zur Karte hinzu
+            card.appendChild(cardBody);
+
+            // Füge die Karte dem DOM hinzu
+            cardContainer.appendChild(card);
+        });
+
+        return data;
+    }
+
+    fetchAsync();
+
+   /*  const courses = [
         {
             title: 'WPM by Prof. Dr. Jürgen Schmidhuber',
             link: '/KursseiteWPM.html'
@@ -232,7 +262,7 @@
             link: 'Content for Palsberg'
         }
     ];
-
+    */
 
     console.log(courses);
 
