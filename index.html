@@ -297,24 +297,24 @@
 
     fetchAsync();
 
-    async function login() {
+    async function login(){
 
-        const User = {
-            email: "issam.boutachdat@stud.fra-uas.de",
-            hashedPassword: 12345
-        }
+const User={
+    email: "issam.boutachdat@stud.fra-uas.de",
+hashedPassword: 12345
+}
 
-        fetch("http://localhost:8081/login", {
-            method: "POST",
-            headers: {'Content-Type': 'application/json'},
-            body: JSON.stringify(User)
-        }).then(res => {
-            console.log("Request complete! response:", res.body);
-            //console.log(res.headers)
-        });
+let response=   await fetch("http://localhost:8081/login", {
+method: "POST",
+headers: {'Content-Type': 'application/json'}, 
+body: JSON.stringify(User)
+});
+let data =await  response.json();
+console.log(data);
+localStorage.setItem("token", data);
 
 
-    }
+}
 
     /* this function should be called when the page is loaded
        it should add the courses to the course-container
