@@ -109,6 +109,8 @@
 
         <br><br><br>
 
+        <button onclick="login()">Login</button>
+
         <div class="row">
             <div class="col">
                 <div class="dropdown_filter">
@@ -141,13 +143,13 @@
         </div>
 
         <br><br><br>
-        <button onclick="fetchAsync()">Get Courses</button>
 
-        <button onclick="login()">Login</button>
 
         <div class="row gutters-sm">
             <div class="col-md-10">
                 <div id="course-container">
+
+
 
                     <!-- for each function to get a card for each course -->
 
@@ -262,41 +264,64 @@
 </style>
 
 <script>
-    
-    
-        async function fetchAsync () {
-  let response = await fetch("http://localhost:8081/course/all"); 
-  let data = await response.json();
-  console.log(data);
-  return data;
-}
 
-async function login(){
 
-    const User={
-        email: "issam.boutachdat@stud.fra-uas.de",
-   hashedPassword: 12345
+    async function fetchAsync() {
+        let response = await fetch("http://localhost:8081/course/all");
+        let data = await response.json();
+        console.log(data);
+
+        const cardContainer = document.getElementById('course-container');
+
+        data.forEach(function (item) {
+            // Erstelle eine neue Karte
+            const card = document.createElement('div');
+            card.classList.add('card');
+
+            // Erstelle ein "div"-Element für den Karteninhalt
+            const cardBody = document.createElement('div');
+            cardBody.classList.add('card-body');
+
+
+            cardBody.innerHTML = `<h4><a href="${item.link}" style="text-decoration: none; color: black;">${item.courseName}</a></h4><p>${item.description}</p>`;
+
+            // Füge den Karteninhalt zur Karte hinzu
+            card.appendChild(cardBody);
+
+            // Füge die Karte dem DOM hinzu
+            cardContainer.appendChild(card);
+        });
+
+        return data;
     }
 
-    fetch("http://localhost:8081/login", {
-  method: "POST",
-  headers: {'Content-Type': 'application/json'}, 
-  body: JSON.stringify(User)
-}).then(res => {
-  console.log("Request complete! response:", res.body);
-  //console.log(res.headers)
-});
+    fetchAsync();
+
+    async function login() {
+
+        const User = {
+            email: "issam.boutachdat@stud.fra-uas.de",
+            hashedPassword: 12345
+        }
+
+        fetch("http://localhost:8081/login", {
+            method: "POST",
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify(User)
+        }).then(res => {
+            console.log("Request complete! response:", res.body);
+            //console.log(res.headers)
+        });
 
 
-
-
-}
-
+    }
 
 
     /* this function should be called when the page is loaded
        it should add the courses to the course-container
-*/
+
+
+
 
     const courses = [
         {
@@ -344,6 +369,8 @@ async function login(){
         // Füge die Karte dem DOM hinzu
         cardContainer.appendChild(card);
     });
+
+     */
 
 
 </script>
