@@ -297,9 +297,9 @@
 
 <script>
     function logOut(){
-        localStorage.setItem("token","")
-        window.location.href = "https://63d92817d90b5e00088e1f2b--majestic-cranachan-bc5242.netlify.app/login";
-    }                           
+        localStorage.removeItem("token")
+        window.location.replace("/login.html");
+        }                       
 
     function editBio(){
 
@@ -318,6 +318,25 @@
         secondLine.innerHTML = newLine2;
 
     }
+    async function isUserLoggedIn(){
+    let response =   fetch("http://localhost:8081/user", {
+  method: 'GET',
+  headers: {
+    'token': localStorage.getItem("token")
+  }
+})
+if(response.status){
+    return;
+}
+else{
+    window.location.replace("/login.html");
+   
+}
+  
+
+}
+
+isUserLoggedIn();
 
 
 </script>

@@ -199,9 +199,9 @@
 <script>
 
 function logOut(){
-        localStorage.setItem("token","")
-        window.location.href = "https://63d924f3c5931e000830e519--majestic-cranachan-bc5242.netlify.app/login";
-    }
+        localStorage.removeItem("token")
+        window.location.replace("/login.html");
+        }
 
 
     /* this function should be called when the page is loaded
@@ -262,6 +262,26 @@ async function fetchAsync() {
         // Füge die Karte dem DOM hinzu
         cardContainer.appendChild(card);
     });
+
+    async function isUserLoggedIn(){
+    let response =   fetch("http://localhost:8081/user", {
+  method: 'GET',
+  headers: {
+    'token': localStorage.getItem("token")
+  }
+})
+if(response.status){
+    return;
+}
+else{
+    window.location.replace("/login.html");
+   
+}
+  
+
+}
+
+isUserLoggedIn();
 </script>
 
 <style>

@@ -237,9 +237,29 @@ margin-bottom: 4em;
 <script>
 
 function logOut(){
-        localStorage.setItem("token","")
-        window.location.href = "/login.html";
-    }
+        localStorage.removeItem("token")
+        window.location.replace("/login.html");
+        }
+
+        async function isUserLoggedIn(){
+    let response =   fetch("http://localhost:8081/user", {
+  method: 'GET',
+  headers: {
+    'token': localStorage.getItem("token")
+  }
+})
+if(response.status){
+    return;
+}
+else{
+    window.location.replace("/login.html");
+   
+}
+  
+
+}
+
+isUserLoggedIn();
 
 </script>
 
