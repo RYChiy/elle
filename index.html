@@ -268,7 +268,7 @@
     
 async function isUserLoggedIn(){
 if(localStorage.getItem("token") == null){
-    window.location.replace(window.location.href+'/login.html');
+    window.location.replace('https://ellestudent.netlify.app/login.html');
 }
 
     let response =  await fetch("http://localhost:8081/user", {
@@ -278,7 +278,7 @@ if(localStorage.getItem("token") == null){
   }
 })
  if (!response.status){
-    window.location.replace(window.location.href+'/login.html');
+    window.location.replace('https://ellestudent.netlify.app/login.html');
    
 }
 else if(response.status){

@@ -240,19 +240,25 @@ function logOut(){
         window.location.replace(window.location.href+'/login.html');
         }
         async function isUserLoggedIn(){
-    let response =   fetch("http://localhost:8081/user", {
+if(localStorage.getItem("token") == null){
+    window.location.replace('https://ellestudent.netlify.app/login.html');
+}
+
+    let response =  await fetch("http://localhost:8081/user", {
   method: 'GET',
   headers: {
     'token': localStorage.getItem("token")
   }
 })
-if(response.status){
-    return;
-}
-else{
+ if (!response.status){
     window.location.replace('https://ellestudent.netlify.app/login.html');
    
 }
+else if(response.status){
+    
+    return;
+}
+
   
 
 }

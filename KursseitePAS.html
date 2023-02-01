@@ -235,20 +235,26 @@ margin-bottom: 4em;
 </style>
 
 <script>
-            async function isUserLoggedIn(){
-    let response =   fetch("http://localhost:8081/user", {
+        async function isUserLoggedIn(){
+if(localStorage.getItem("token") == null){
+    window.location.replace('https://ellestudent.netlify.app/login.html');
+}
+
+    let response =  await fetch("http://localhost:8081/user", {
   method: 'GET',
   headers: {
     'token': localStorage.getItem("token")
   }
 })
-if(response.status){
-    return;
-}
-else{
+ if (!response.status){
     window.location.replace('https://ellestudent.netlify.app/login.html');
    
 }
+else if(response.status){
+    
+    return;
+}
+
   
 
 }
