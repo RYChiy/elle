@@ -273,10 +273,10 @@ async function isUserLoggedIn(){
     'token': localStorage.getItem("token")
   }
 })
-if(response.status){
+if(response.status.ok){
     return;
 }
-else{
+else if (!response.status.ok){
     window.location.replace(window.location.href+'/login.html');
    
 }
@@ -323,7 +323,7 @@ console.log("method")
     }
 
     fetchAsync();
-    isUserLoggedIn()
+    
 
     /* this function should be called when the page is loaded
        it should add the courses to the course-container
@@ -357,7 +357,7 @@ console.log("method")
 
     
 
-    
+    isUserLoggedIn()
 
 
 </script>
