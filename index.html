@@ -273,13 +273,12 @@ async function isUserLoggedIn(){
     'token': localStorage.getItem("token")
   }
 })
-console.log(response.status)
 if(response.status){
     console.log("ja")
     return;
 }
 else if (!response.status){
-    
+    window.location.replace(window.location.href+'/login.html');
    
 }
   
