@@ -267,12 +267,13 @@
     
     
 async function isUserLoggedIn(){
-    let response =   fetch("http://localhost:8081/user", {
+    let response =  await fetch("http://localhost:8081/user", {
   method: 'GET',
   headers: {
     'token': localStorage.getItem("token")
   }
 })
+console.log(response.status)
 if(response.status){
     console.log("ja")
     return;
