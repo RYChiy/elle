@@ -300,7 +300,7 @@ else if(response.status){
 
 
     async function fetchAsync() {
-        let response = await fetch("http://localhost:8081/course/all");
+        let response = await fetch("http://localhost:8081/course");
         let data = await response.json();
         console.log(data);
 
