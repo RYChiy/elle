@@ -264,7 +264,7 @@
 </style>
 
 <script>
-    var url ="/login.html";
+    
     
 async function isUserLoggedIn(){
     let response =   fetch("http://localhost:8081/user", {
@@ -274,6 +274,7 @@ async function isUserLoggedIn(){
   }
 })
 if(response.status){
+    console.log("ja")
     return;
 }
 else if (!response.status){
@@ -284,7 +285,7 @@ else if (!response.status){
 
 }
 
-console.log("method")
+
 
     function logOut(){
         
