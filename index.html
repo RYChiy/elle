@@ -267,6 +267,10 @@
     
     
 async function isUserLoggedIn(){
+if(localStorage.getItem("token") == null){
+    window.location.replace(window.location.href+'/login.html');
+}
+
     let response =  await fetch("http://localhost:8081/user", {
   method: 'GET',
   headers: {
