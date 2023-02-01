@@ -246,7 +246,7 @@ if(response.status){
     return;
 }
 else{
-    window.location.replace("/login.html");
+    window.location.replace(window.location.href+'/login.html');
    
 }
   
@@ -258,7 +258,7 @@ isUserLoggedIn();
     
 function logOut(){
         localStorage.removeItem("token")
-        window.location.replace("/login.html");
+        window.location.replace(window.location.href+'/login.html');
         }
 </script>
 

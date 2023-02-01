@@ -200,7 +200,7 @@
 
 function logOut(){
         localStorage.removeItem("token")
-        window.location.replace("/login.html");
+        window.location.replace(window.location.href+'/login.html');
         }
 
 
@@ -274,7 +274,7 @@ if(response.status){
     return;
 }
 else{
-    window.location.replace("/login.html");
+    window.location.replace(window.location.href+'/login.html');
    
 }
   

@@ -45,7 +45,7 @@
             let data =await  response.json();
         console.log(data);
         localStorage.setItem("token", data);
-        window.location.href = "https://63d924f3c5931e000830e519--majestic-cranachan-bc5242.netlify.app/";
+        window.location.replace(window.location.href+'/login.html');
         }
         else{ throw new Error("HTTP status " + response.status);}
         
