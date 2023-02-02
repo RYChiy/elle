@@ -213,6 +213,7 @@
 */
 
     let courseId;
+    let index = 0;
 
     async function fetchAsync() {
         let response = await fetch("http://localhost:8081/course/all");
@@ -221,7 +222,6 @@
 
 
         courseId = data.map((course) => course.id);
-        var index = 0;
 
         const cardContainer = document.getElementById('course-container');
 
