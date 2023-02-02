@@ -219,6 +219,7 @@
         const cardContainer = document.getElementById('course-container');
 
         data.forEach(function (item) {
+
             // Erstelle eine neue Karte
             const card = document.createElement('div');
             card.classList.add('card');
@@ -227,10 +228,17 @@
             const cardBody = document.createElement('div');
             cardBody.classList.add('card-body');
 
+            const button = document.createElement('div');
+            button.classList.add('beitretenbutton');
+
+            button.innerHTML = `<button class="btn btn-primary" onclick="beitreten(item.courseId)">Kurs beitreten</button>`
+
             cardBody.innerHTML = `<h4><a href="${item.link}" style="text-decoration: none; color: black;">${item.courseName}</a></h4><p>${item.studyingDescription}</p>`;
 
             // Füge den Karteninhalt zur Karte hinzu
+            cardBody.appendChild(button);
             card.appendChild(cardBody);
+
 
             // Füge die Karte dem DOM hinzu
             cardContainer.appendChild(card);
@@ -264,6 +272,23 @@
     }
 
     isUserLoggedIn();
+
+    async function beitreten(item) {
+
+        let response=   await fetch("http://localhost:8081/course/" + item, {
+            method: "GET",
+            headers: {'token': localStorage.getItem("token"),
+                'Content-Type': 'application/json'}
+        });
+
+        if(response.status == 200){
+            window.location.replace('https://ellestudent.netlify.app/seach.html');
+        }
+        else{
+            alert("Fehler beim Verlassen des Kurses");
+        }
+
+    }
 </script>
 
 <style>
@@ -281,6 +306,11 @@
         transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
         height: 20px;
         width: 100px;
+    }
+
+    .beitretenbutton {
+        float: right;
+
     }
 
     body {
