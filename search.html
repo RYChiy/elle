@@ -213,14 +213,16 @@
        it should add the courses to the course-container
 */
 
-
-    let allUserCourses = await fetch("http://localhost:8081/course", {
-        method: "GET",
-        headers: {
-            'token': localStorage.getItem("token"),
-            'Content-Type': 'application/json'
-        }
-    });
+    async function userCourses() {
+        let allUserCourses = await fetch("http://localhost:8081/course", {
+            method: "GET",
+            headers: {
+                'token': localStorage.getItem("token"),
+                'Content-Type': 'application/json'
+            }
+        });
+        return allUserCourses.json();
+    }
 
     async function fetchAsync() {
         let response = await fetch("http://localhost:8081/course/all", {
@@ -232,6 +234,7 @@
         let data = await response.json();
         console.log(data);
 
+        var allUserCourses = userCourses();
 
         var index = 0;
 
@@ -258,6 +261,7 @@
             console.log(item.courseId);
 
             var drin;
+
             allUserCourses.forEach(function (course) {
                 if (course.courseId == item.courseId) {
                     drin = true;
@@ -265,10 +269,10 @@
                     drin = false;
             });
 
-            if(drin == true){
+            if (drin == true) {
                 button.innerHTML = `<button class="btn btn-primary" onclick="leave('${item.courseId}')">Kurs verlassen</button>`
 
-            }else{
+            } else {
                 button.innerHTML = `<button class="btn btn-primary" onclick="beitreten('${item.courseId}')">Kurs beitreten</button>`
 
             }
@@ -290,18 +294,19 @@
 
     }
 
-    async function leave(courseID){
+    async function leave(courseID) {
 
-        let response=   await fetch("http://localhost:8081/course/" + courseID, {
+        let response = await fetch("http://localhost:8081/course/" + courseID, {
             method: "DELETE",
-            headers: {'token': localStorage.getItem("token"),
-                'Content-Type': 'application/json'}
+            headers: {
+                'token': localStorage.getItem("token"),
+                'Content-Type': 'application/json'
+            }
         });
 
-        if(response.status == 200){
+        if (response.status == 200) {
             window.location.replace('https://ellestudent.netlify.app');
-        }
-        else{
+        } else {
             alert("Fehler beim Verlassen des Kurses");
         }
 
