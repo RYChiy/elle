@@ -310,7 +310,7 @@
     }
 
     async function fetchAsync() {
-        let response = await fetch("http://localhost:8081/course/all", {
+        let response = await fetch("http://localhost:8081/course", {
             method: 'GET',
             headers: {
                 'token': localStorage.getItem("token")
@@ -409,7 +409,7 @@
     }
 
     async function sortZA() {
-        let response = await fetch("http://localhost:8081/course/all", {
+        let response = await fetch("http://localhost:8081/course", {
             method: 'GET',
             headers: {
                 'token': localStorage.getItem("token")
@@ -493,7 +493,7 @@
 
 
     async function sortAZ() {
-        let response = await fetch("http://localhost:8081/course/all", {
+        let response = await fetch("http://localhost:8081/course", {
             method: 'GET',
             headers: {
                 'token': localStorage.getItem("token")
