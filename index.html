@@ -325,7 +325,7 @@
         var index = 0;
 
         let cardContainer = document.getElementById('course-container');
-        cardContainer.style.marginTop = "70px";
+        cardContainer.style.marginTop = "50px";
         cardContainer.innerHTML = "";
 
         data.forEach(function (item) {
@@ -572,6 +572,25 @@
         });
 
         return data;
+
+    }
+
+    async function leave(courseID) {
+
+        let response = await fetch("http://localhost:8081/course/" + courseID, {
+            method: "DELETE",
+            headers: {
+                'token': localStorage.getItem("token"),
+                'Content-Type': 'application/json'
+            }
+        });
+
+        if (response.status == 200) {
+            window.location.reload();
+        } else {
+            alert("Fehler beim Verlassen des Kurses");
+        }
+
 
     }
 
