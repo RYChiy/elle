@@ -272,6 +272,12 @@
 
 
 
+
+    function logOut() {
+        localStorage.removeItem("token")
+        window.location.replace('https://ellestudent.netlify.app/login.html');
+    }
+
     
     
 async function isUserLoggedIn(){
@@ -297,15 +303,6 @@ else if(response.status){
   
 
 }
-
-
-
-    function logOut(){
-        
-        localStorage.setItem("token","")
-        window.location.href = url;
-    }
-
 
     async function fetchAsync() {
         let response = await fetch("http://localhost:8081/course", {
