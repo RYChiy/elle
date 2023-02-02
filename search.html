@@ -243,10 +243,10 @@
         const cardContainer = document.getElementById('course-container');
 
         data.sort(function(a, b) {
-            if (a.courseName.toLowerCase() < b.courseName.toLowerCase()) {
+            if (a.courseName.toLowerCase() > b.courseName.toLowerCase()) {
                 return -1;
             }
-            if (a.courseName.toLowerCase() > b.courseName.toLowerCase()) {
+            if (a.courseName.toLowerCase() < b.courseName.toLowerCase()) {
                 return 1;
             }
             return 0;
