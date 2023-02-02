@@ -242,6 +242,8 @@
 
         const cardContainer = document.getElementById('course-container');
 
+        data.sort((a, b) => a.courseName.localeCompare(a.courseName));
+
         data.forEach(function (item) {
 
             //let courseId = item.courseId;
