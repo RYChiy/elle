@@ -234,7 +234,7 @@
         let data = await response.json();
         console.log(data);
 
-        var allUserCourses = userCourses();
+        var allUserCourses = await userCourses();
         console.log(allUserCourses);
 
         var index = 0;
