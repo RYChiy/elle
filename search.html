@@ -242,7 +242,15 @@
 
         const cardContainer = document.getElementById('course-container');
 
-        data.sort((a, b) => a.courseName.localeCompare(a.courseName));
+        data.sort(function(a, b) {
+            if (a.courseName.toLowerCase() < b.courseName.toLowerCase()) {
+                return -1;
+            }
+            if (a.courseName.toLowerCase() > b.courseName.toLowerCase()) {
+                return 1;
+            }
+            return 0;
+        });
 
         data.forEach(function (item) {
 
