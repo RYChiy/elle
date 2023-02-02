@@ -260,10 +260,10 @@
 
             let drin = false;
 
-            for(var i = 0; i < data.length; i++){
-                if(item.courseId === allUserCourses[i].courseId){
+            for(var i = 0; i < allUserCourses.length; i++){
+                if(allUserCourses[i].courseId == item.courseId){
                     drin = true;
-                    return;
+                    break;
                 }else{
                     drin = false;
                 }
