@@ -334,9 +334,28 @@
             const cardBody = document.createElement('div');
             cardBody.classList.add('card-body');
 
+            const button = document.createElement('div');
+            button.classList.add('beitretenbutton');
 
-            cardBody.innerHTML = `<h4><a href="${item.link}" style="text-decoration: none; color: black;">${item.courseName}</a></h4><p>${item.studyingDescription}</p>`;
+            let drin = false;
 
+            for (var i = 0; i < allUserCourses.length; i++) {
+                if (allUserCourses[i].courseId == item.courseId) {
+                    drin = true;
+                    break;
+                } else {
+                    drin = false;
+                }
+            }
+
+            console.log(drin);
+            if (drin == true) {
+                button.innerHTML = `<button class="btn btn-danger" onclick="leave('${item.courseId}')">Kurs verlassen</button>`
+
+            } else if (drin == false) {
+                button.innerHTML = `<button class="btn btn-primary" onclick="beitreten('${item.courseId}')">Kurs beitreten</button>`
+
+            }
             // Füge den Karteninhalt zur Karte hinzu
             card.appendChild(cardBody);
 
