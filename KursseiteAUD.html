@@ -271,7 +271,8 @@ async function leave(){
 
     let response=   await fetch("http://localhost:8081/course/4", {
         method: "DELETE",
-        headers: {'token': localStorage.getItem("token")}
+        headers: {'token': localStorage.getItem("token"),
+        'Content-Type': 'application/json'}
     });
 
     if(response.status == 200){
