@@ -211,13 +211,16 @@
     /* this function should be called when the page is loaded
        it should add the courses to the course-container
 */
+
+    let courseId;
+
     async function fetchAsync() {
         let response = await fetch("http://localhost:8081/course/all");
         let data = await response.json();
         console.log(data);
 
 
-        const courseID = data.map((course) => course.id);
+        courseId = data.map((course) => course.id);
         var index = 0;
 
         const cardContainer = document.getElementById('course-container');
@@ -235,7 +238,7 @@
             const button = document.createElement('div');
             button.classList.add('beitretenbutton');
 
-            button.innerHTML = `<button class="btn btn-primary" onclick="beitreten(courseID[index])">Kurs beitreten</button>`
+            button.innerHTML = `<button class="btn btn-primary" onclick="beitreten(courseId[index])">Kurs beitreten</button>`
 
             cardBody.innerHTML = `<h4><a href="${item.link}" style="text-decoration: none; color: black;">${item.courseName}</a></h4><p>${item.studyingDescription}</p>`;
 
