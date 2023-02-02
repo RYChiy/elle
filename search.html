@@ -227,7 +227,7 @@
             const cardBody = document.createElement('div');
             cardBody.classList.add('card-body');
 
-            cardBody.innerHTML = `<h4><a onclick="saveCourseID(item.courseId)" href="${item.link}" style="text-decoration: none; color: black;">${item.courseName}</a></h4><p>${item.studyingDescription}</p>`;
+            cardBody.innerHTML = `<h4 onclick="saveCourseID(item.courseId)"><a href="${item.link}" style="text-decoration: none; color: black;">${item.courseName}</a></h4><p>${item.studyingDescription}</p>`;
 
             // Füge den Karteninhalt zur Karte hinzu
             card.appendChild(cardBody);
