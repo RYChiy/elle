@@ -319,6 +319,8 @@
         let data = await response.json();
         console.log(data);
 
+        var allUserCourses = await userCourses();
+
         let cardContainer = document.getElementById('course-container');
         cardContainer.style.marginTop = "50px";
         cardContainer.innerHTML = "";
