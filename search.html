@@ -27,7 +27,8 @@
 <body class="d-flex" style="min-height: 100vh" id="body-pd">
 
 <header class="header" id="header" style="background-color: #e2e8f0">
-    <div class="header_toggle"><i class='bx bx-menu' id="header-toggle" style="color: #506698; margin-top: 20px"></i></div>
+    <div class="header_toggle"><i class='bx bx-menu' id="header-toggle" style="color: #506698; margin-top: 20px"></i>
+    </div>
 
     <nav class="navbar navbar-expand-lg navbar-dark shadow-5-strong">
         <div class="container-fluid" style="margin-top: 20px">
@@ -84,17 +85,19 @@
                                                                                   style="height: 2em; width: 2em;"></i>
             <span class="nav_logo-name" style="margin-bottom:-1.5em ;">ELLE</span> </a>
             <div class="nav_list"><a href="/index.html" class="nav_link"> <i class='bx bx-grid-alt nav_icon'
-                                                                          style="color: #506698;"></i> <span
+                                                                             style="color: #506698;"></i> <span
                     class="nav_name" style="color:#506698                    ;">Meine Kurse</span> </a> <a
                     href="/myProfile.html" class="nav_link"> <i class='bx bx-user nav_icon' style="color: #506698;"></i>
                 <span class="nav_name" style="color: #506698;">Mein Profil</span> </a>   </a> <a href="/search.html"
-                                                                                                 class="nav_link active"> <i
-                    class='bx bx-folder nav_icon' style="color: #506698; "></i> <span class="nav_name"
-                                                                                      style="color: #506698;">Kurse Suchen</span>
+                                                                                                 class="nav_link active">
+                <i
+                        class='bx bx-folder nav_icon' style="color: #506698; "></i> <span class="nav_name"
+                                                                                          style="color: #506698;">Kurse Suchen</span>
             </a></div>
         </div>
-        <a href="#" onclick="logOut()" class="nav_link"> <i class='bx bx-log-out nav_icon' style="color: #506698;"></i> <span
-                class="nav_name" style="color: #506698;" >SignOut</span> </a>
+        <a href="#" onclick="logOut()" class="nav_link"> <i class='bx bx-log-out nav_icon' style="color: #506698;"></i>
+            <span
+                    class="nav_name" style="color: #506698;">SignOut</span> </a>
     </nav>
 </div>
 <!--Container Main start-->
@@ -122,7 +125,8 @@
             <div class="col">
                 <div class="dropdown_sort">
                     <button class="btn btn-secondary dropdown-toggle" type="button" id="sortDropdown"
-                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="width: 400px; margin-top: 35px">
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+                            style="width: 400px; margin-top: 35px">
                         Sort Courses
                     </button>
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
@@ -135,79 +139,79 @@
             </div>
         </div>
 
-            <div class="col-md-10" id="course-container">
-                <p style="margin-bottom: 2px; margin-left: 12px; margin-top: 70px">all courses</p>
-                 <!--
-                <div class="card">
-                    <div class="card-body">
+        <div class="col-md-10" id="course-container">
+            <p style="margin-bottom: 2px; margin-left: 12px; margin-top: 70px">all courses</p>
+            <!--
+           <div class="card">
+               <div class="card-body">
 
-                        <h6><a href="/Kursseite.html" style="text-decoration: none; color: black;">WPM by Prof. Dr.
-                            Jürgen
-                            Schmidhuber</a></h6>
-                    </div>
-                </div>
+                   <h6><a href="/Kursseite.html" style="text-decoration: none; color: black;">WPM by Prof. Dr.
+                       Jürgen
+                       Schmidhuber</a></h6>
+               </div>
+           </div>
 
-                <div class="card">
-                    <div class="card-body">
+           <div class="card">
+               <div class="card-body">
 
-                        <h6><a href="#" style="text-decoration: none; color: black;">Alt: Prozessgetriebene
-                            Anwendungssysteme - WiSe 22/23</a></h6>
+                   <h6><a href="#" style="text-decoration: none; color: black;">Alt: Prozessgetriebene
+                       Anwendungssysteme - WiSe 22/23</a></h6>
 
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="card-body">
+               </div>
+           </div>
+           <div class="card">
+               <div class="card-body">
 
-                        <h6><a href="#" style="text-decoration: none; color: black;">Software Engineering by Prof.
-                            Hans-Joachim Hof</a></h6>
+                   <h6><a href="#" style="text-decoration: none; color: black;">Software Engineering by Prof.
+                       Hans-Joachim Hof</a></h6>
 
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="card-body">
+               </div>
+           </div>
+           <div class="card">
+               <div class="card-body">
 
-                        <h6><a href="#" style="text-decoration: none; color: black;">Jakusch: Medizintechnik -
-                            WiSe 22</a></h6>
+                   <h6><a href="#" style="text-decoration: none; color: black;">Jakusch: Medizintechnik -
+                       WiSe 22</a></h6>
 
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="card-body">
+               </div>
+           </div>
+           <div class="card">
+               <div class="card-body">
 
-                        <h6><a href="#" style="text-decoration: none; color: black;">WPM by Prof. Dr. Jürgen
-                            Schmidhuber</a></h6>
+                   <h6><a href="#" style="text-decoration: none; color: black;">WPM by Prof. Dr. Jürgen
+                       Schmidhuber</a></h6>
 
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="card-body">
+               </div>
+           </div>
+           <div class="card">
+               <div class="card-body">
 
-                        <h6><a href="#" style="text-decoration: none; color: black;">LE-Inf: WiSe 2022/23
-                            (Lotsenkurs)</a></h6>
+                   <h6><a href="#" style="text-decoration: none; color: black;">LE-Inf: WiSe 2022/23
+                       (Lotsenkurs)</a></h6>
 
-                    </div>
-                </div>
-                -->
+               </div>
+           </div>
+           -->
 
-            </div>
         </div>
     </div>
+</div>
 </div>
 </div>
 
 </body>
 <script>
 
-function logOut(){
+    function logOut() {
         localStorage.removeItem("token")
-        window.location.replace(window.location.href+'/login.html');
-        }
+        window.location.replace(window.location.href + '/login.html');
+    }
 
 
     /* this function should be called when the page is loaded
        it should add the courses to the course-container
 */
-async function fetchAsync() {
+    async function fetchAsync() {
         let response = await fetch("http://localhost:8081/course/all");
         let data = await response.json();
         console.log(data);
@@ -223,9 +227,9 @@ async function fetchAsync() {
             const cardBody = document.createElement('div');
             cardBody.classList.add('card-body');
 
-
+            console.log(item.courseId);
             cardBody.innerHTML = `<h4><a onclick="saveCourseID(item.courseId)" href="${item.link}" style="text-decoration: none; color: black;">${item.courseName}</a></h4><p>${item.studyingDescription}</p>`;
-
+            console.log(item.courseId);
             // Füge den Karteninhalt zur Karte hinzu
             card.appendChild(cardBody);
 
@@ -238,60 +242,33 @@ async function fetchAsync() {
 
     fetchAsync();
 
+    function saveCourseID(item) {
+        localStorage.setItem("courseId", item);
+    }
 
-    console.log(courses);
+    async function isUserLoggedIn() {
+        if (localStorage.getItem("token") == null) {
+            window.location.replace('https://ellestudent.netlify.app/login.html');
+        }
 
-    const cardContainer = document.getElementById('course-container');
+        let response = await fetch("http://localhost:8081/user", {
+            method: 'GET',
+            headers: {
+                'token': localStorage.getItem("token")
+            }
+        })
+        if (!response.status) {
+            window.location.replace('https://ellestudent.netlify.app/login.html');
 
-    courses.forEach(function (item) {
-        // Erstelle eine neue Karte
-        const card = document.createElement('div');
-        card.classList.add('card');
+        } else if (response.status) {
 
-        // Erstelle ein "div"-Element für den Karteninhalt
-        const cardBody = document.createElement('div');
-        cardBody.classList.add('card-body');
+            return;
+        }
 
 
-        cardBody.innerHTML = `<h6><a onclick="saveCourseID(item.courseId)" href="${item.link}" style="text-decoration: none; color: black;">${item.title}</a></h6>
-`;
+    }
 
-        // Füge den Karteninhalt zur Karte hinzu
-        card.appendChild(cardBody);
-
-        // Füge die Karte dem DOM hinzu
-        cardContainer.appendChild(card);
-    });
-
-function saveCourseID(item) {
-    localStorage.setItem("courseId", item);
-}
-
-    async function isUserLoggedIn(){
-if(localStorage.getItem("token") == null){
-    window.location.replace('https://ellestudent.netlify.app/login.html');
-}
-
-    let response =  await fetch("http://localhost:8081/user", {
-  method: 'GET',
-  headers: {
-    'token': localStorage.getItem("token")
-  }
-})
- if (!response.status){
-    window.location.replace('https://ellestudent.netlify.app/login.html');
-   
-}
-else if(response.status){
-    
-    return;
-}
-
-  
-
-}
-
-isUserLoggedIn();
+    isUserLoggedIn();
 </script>
 
 <style>
