@@ -134,10 +134,8 @@
                         Sort Courses
                     </button>
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                        <a class="dropdown-item" href="#">Neu-zu-Alt</a>
-                        <a class="dropdown-item" href="#">Alt-zu-Neu</a>
-                        <a class="dropdown-item" href="#">A-Z</a>
-                        <a class="dropdown-item" href="#">Z-A</a>
+                        <a class="dropdown-item" onclick="sortAZ()">A-Z</a>
+                        <a class="dropdown-item" onclick="sortZA()">Z-A</a>
                     </div>
                 </div>
             </div>
@@ -316,7 +314,7 @@ else if(response.status){
         console.log(data);
 
         const cardContainer = document.getElementById('course-container');
-
+        cardContainer.style.marginTop = "70px";
         data.forEach(function (item) {
             // Erstelle eine neue Karte
             const card = document.createElement('li');
@@ -367,6 +365,175 @@ else if(response.status){
             
         }
     }
+
+    async function sortZA() {
+        let response = await fetch("http://localhost:8081/course/all", {
+            method: 'GET',
+            headers: {
+                'token': localStorage.getItem("token")
+            }
+        });
+        let data = await response.json();
+        console.log(data);
+
+        var allUserCourses = await userCourses();
+        console.log(allUserCourses);
+
+        var index = 0;
+
+        let cardContainer = document.getElementById('course-container');
+        cardContainer.style.marginTop = "70px";
+        cardContainer.innerHTML = "";
+
+        data.sort(function (a, b) {
+            if (a.courseName.toLowerCase() > b.courseName.toLowerCase()) {
+                return -1;
+            }
+            if (a.courseName.toLowerCase() < b.courseName.toLowerCase()) {
+                return 1;
+            }
+            return 0;
+        });
+
+        data.forEach(function (item) {
+
+            //let courseId = item.courseId;
+
+            // Erstelle eine neue Karte
+            const card = document.createElement('li');
+            card.classList.add('card_show');
+            card.classList.add('card');
+
+
+            // Erstelle ein "div"-Element für den Karteninhalt
+            const cardBody = document.createElement('div');
+            cardBody.classList.add('card-body');
+
+            const button = document.createElement('div');
+            button.classList.add('beitretenbutton');
+
+            let drin = false;
+
+            for (var i = 0; i < allUserCourses.length; i++) {
+                if (allUserCourses[i].courseId == item.courseId) {
+                    drin = true;
+                    break;
+                } else {
+                    drin = false;
+                }
+            }
+
+            console.log(drin);
+            if (drin == true) {
+                button.innerHTML = `<button class="btn btn-danger" onclick="leave('${item.courseId}')">Kurs verlassen</button>`
+
+            } else if (drin == false) {
+                button.innerHTML = `<button class="btn btn-primary" onclick="beitreten('${item.courseId}')">Kurs beitreten</button>`
+
+            }
+
+            cardBody.innerHTML = `<h4><a href="${item.link}" style="text-decoration: none; color: black;">${item.courseName}</a></h4><p>${item.studyingDescription}</p>`;
+
+            // Füge den Karteninhalt zur Karte hinzu
+            cardBody.appendChild(button);
+            card.appendChild(cardBody);
+
+
+            // Füge die Karte dem DOM hinzu
+            cardContainer.appendChild(card);
+
+            index++;
+        });
+
+        return data;
+
+    }
+
+
+    async function sortAZ() {
+        let response = await fetch("http://localhost:8081/course/all", {
+            method: 'GET',
+            headers: {
+                'token': localStorage.getItem("token")
+            }
+        });
+        let data = await response.json();
+        console.log(data);
+
+        var allUserCourses = await userCourses();
+        console.log(allUserCourses);
+
+        var index = 0;
+
+        let cardContainer = document.getElementById('course-container');
+        cardContainer.style.marginTop = "70px";
+        cardContainer.innerHTML = "";
+
+        data.sort(function (a, b) {
+            if (a.courseName.toLowerCase() < b.courseName.toLowerCase()) {
+                return -1;
+            }
+            if (a.courseName.toLowerCase() > b.courseName.toLowerCase()) {
+                return 1;
+            }
+            return 0;
+        });
+
+        data.forEach(function (item) {
+
+            //let courseId = item.courseId;
+
+            // Erstelle eine neue Karte
+            const card = document.createElement('li');
+            card.classList.add('card_show');
+            card.classList.add('card');
+
+
+            // Erstelle ein "div"-Element für den Karteninhalt
+            const cardBody = document.createElement('div');
+            cardBody.classList.add('card-body');
+
+            const button = document.createElement('div');
+            button.classList.add('beitretenbutton');
+
+            let drin = false;
+
+            for (var i = 0; i < allUserCourses.length; i++) {
+                if (allUserCourses[i].courseId == item.courseId) {
+                    drin = true;
+                    break;
+                } else {
+                    drin = false;
+                }
+            }
+
+            console.log(drin);
+            if (drin == true) {
+                button.innerHTML = `<button class="btn btn-danger" onclick="leave('${item.courseId}')">Kurs verlassen</button>`
+
+            } else if (drin == false) {
+                button.innerHTML = `<button class="btn btn-primary" onclick="beitreten('${item.courseId}')">Kurs beitreten</button>`
+
+            }
+
+            cardBody.innerHTML = `<h4><a href="${item.link}" style="text-decoration: none; color: black;">${item.courseName}</a></h4><p>${item.studyingDescription}</p>`;
+
+            // Füge den Karteninhalt zur Karte hinzu
+            cardBody.appendChild(button);
+            card.appendChild(cardBody);
+
+
+            // Füge die Karte dem DOM hinzu
+            cardContainer.appendChild(card);
+
+            index++;
+        });
+
+        return data;
+
+    }
+
+
     /* this function should be called when the page is loaded
        it should add the courses to the course-container
 
