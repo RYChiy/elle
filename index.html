@@ -313,8 +313,8 @@ else if(response.status){
         let data = await response.json();
         console.log(data);
 
-        const cardContainer = document.getElementById('course-container');
-        cardContainer.style.marginTop = "70px";
+        let cardContainer = document.getElementById('course-container');
+        cardContainer.style.marginTop = "50px";
         cardContainer.innerHTML = "";
 
         data.forEach(function (item) {
@@ -384,7 +384,7 @@ else if(response.status){
         var index = 0;
 
         let cardContainer = document.getElementById('course-container');
-        cardContainer.style.marginTop = "70px";
+        cardContainer.style.marginTop = "50px";
         cardContainer.innerHTML = "";
 
         data.sort(function (a, b) {
@@ -468,7 +468,7 @@ else if(response.status){
         var index = 0;
 
         let cardContainer = document.getElementById('course-container');
-        cardContainer.style.marginTop = "70px";
+        cardContainer.style.marginTop = "50px";
         cardContainer.innerHTML = "";
 
         data.sort(function (a, b) {
