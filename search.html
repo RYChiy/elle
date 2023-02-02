@@ -262,12 +262,13 @@
 
             var drin;
 
-            allUserCourses.forEach(function (course) {
-                if (course.courseId == item.courseId) {
+            for(var i = 0; i < allUserCourses.length; i++){
+                if(allUserCourses[i].courseId == item.courseId){
                     drin = true;
-                } else
+                }else{
                     drin = false;
-            });
+                }
+            }
 
             if (drin == true) {
                 button.innerHTML = `<button class="btn btn-primary" onclick="leave('${item.courseId}')">Kurs verlassen</button>`
