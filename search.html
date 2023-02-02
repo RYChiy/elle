@@ -224,7 +224,7 @@ async function fetchAsync() {
             cardBody.classList.add('card-body');
 
 
-            cardBody.innerHTML = `<h4><a href="${item.link}" style="text-decoration: none; color: black;">${item.courseName}</a></h4><p>${item.studyingDescription}</p>`;
+            cardBody.innerHTML = `<h4><a onclick="saveCourseID(item.courseId)" href="${item.link}" style="text-decoration: none; color: black;">${item.courseName}</a></h4><p>${item.studyingDescription}</p>`;
 
             // Füge den Karteninhalt zur Karte hinzu
             card.appendChild(cardBody);
@@ -237,6 +237,10 @@ async function fetchAsync() {
     }
 
     fetchAsync();
+
+    function saveCourseID(item) {
+        localStorage.setItem("courseId", item);
+    }
 
 
     console.log(courses);

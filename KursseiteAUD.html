@@ -104,7 +104,7 @@
                                 <span style="color: #0078d7; font-weight: bold; float: right; margin-right: 0.5em;">    VM anfordern</span>
                     </div>
                     <div class="verlassenbutton">
-                        <button class="btn btn-primary" >Kurs verlassen</button>
+                        <button class="btn btn-primary" onclick="leave">Kurs verlassen</button>
                     </div>
                     </div>
                         <br>
@@ -266,6 +266,23 @@ else if(response.status){
 }
 
 isUserLoggedIn();
+
+async function leave(){
+
+    let response=   await fetch("http://localhost:8081/course/"+ localStorage.getItem("courseID"), {
+        method: "DELETE",
+        headers: {'token': localStorage.getItem("token")}
+    });
+
+    if(response.status == 200){
+        window.location.replace('https://ellestudent.netlify.app');
+    }
+    else{
+        alert("Fehler beim Verlassen des Kurses");
+    }
+
+
+}
 
 </script>
 
