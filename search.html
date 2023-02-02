@@ -134,7 +134,6 @@
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                         <a class="dropdown-item" onclick="sortAZ()">A-Z</a>
                         <a class="dropdown-item" onclick="sortZA()">Z-A</a>
-                        <a class="dropdown-item" onclick="fetchAsync()">Normal</a>
                     </div>
                 </div>
             </div>
@@ -239,7 +238,9 @@
 
         var index = 0;
 
-        const cardContainer = document.getElementById('course-container');
+        let cardContainer = document.getElementById('course-container');
+
+        cardContainer.innerHTML = "";
 
         data.forEach(function (item) {
 
@@ -260,11 +261,11 @@
 
             let drin = false;
 
-            for(var i = 0; i < allUserCourses.length; i++){
-                if(allUserCourses[i].courseId == item.courseId){
+            for (var i = 0; i < allUserCourses.length; i++) {
+                if (allUserCourses[i].courseId == item.courseId) {
                     drin = true;
                     break;
-                }else{
+                } else {
                     drin = false;
                 }
             }
@@ -295,7 +296,7 @@
 
     }
 
-
+    fetchAsync();
 
 
     async function leave(courseID) {
@@ -383,9 +384,11 @@
 
         var index = 0;
 
-        const cardContainer = document.getElementById('course-container');
+        let cardContainer = document.getElementById('course-container');
 
-        data.sort(function(a, b) {
+        cardContainer.innerHTML = "";
+
+        data.sort(function (a, b) {
             if (a.courseName.toLowerCase() > b.courseName.toLowerCase()) {
                 return -1;
             }
@@ -414,11 +417,11 @@
 
             let drin = false;
 
-            for(var i = 0; i < allUserCourses.length; i++){
-                if(allUserCourses[i].courseId == item.courseId){
+            for (var i = 0; i < allUserCourses.length; i++) {
+                if (allUserCourses[i].courseId == item.courseId) {
                     drin = true;
                     break;
-                }else{
+                } else {
                     drin = false;
                 }
             }
@@ -465,9 +468,11 @@
 
         var index = 0;
 
-        const cardContainer = document.getElementById('course-container');
+        let cardContainer = document.getElementById('course-container');
 
-        data.sort(function(a, b) {
+        cardContainer.innerHTML = "";
+
+        data.sort(function (a, b) {
             if (a.courseName.toLowerCase() < b.courseName.toLowerCase()) {
                 return -1;
             }
@@ -496,11 +501,11 @@
 
             let drin = false;
 
-            for(var i = 0; i < allUserCourses.length; i++){
-                if(allUserCourses[i].courseId == item.courseId){
+            for (var i = 0; i < allUserCourses.length; i++) {
+                if (allUserCourses[i].courseId == item.courseId) {
                     drin = true;
                     break;
-                }else{
+                } else {
                     drin = false;
                 }
             }
