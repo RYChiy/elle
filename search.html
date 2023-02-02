@@ -231,7 +231,8 @@
             const button = document.createElement('div');
             button.classList.add('beitretenbutton');
 
-            button.innerHTML = `<button class="btn btn-primary" onclick="beitreten(item.courseId)">Kurs beitreten</button>`
+            const courseID = item.courseId;
+            button.innerHTML = `<button class="btn btn-primary" onclick="beitreten(courseID)">Kurs beitreten</button>`
 
             cardBody.innerHTML = `<h4><a href="${item.link}" style="text-decoration: none; color: black;">${item.courseName}</a></h4><p>${item.studyingDescription}</p>`;
 
