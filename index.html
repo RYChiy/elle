@@ -310,7 +310,7 @@
     }
 
     async function fetchAsync() {
-        let response = await fetch("http://localhost:8081/course", {
+        let response = await fetch("http://localhost:8081/course/all", {
             method: 'GET',
             headers: {
                 'token': localStorage.getItem("token")
@@ -320,17 +320,23 @@
         console.log(data);
 
         var allUserCourses = await userCourses();
+        console.log(allUserCourses);
+
+        var index = 0;
 
         let cardContainer = document.getElementById('course-container');
-        cardContainer.style.marginTop = "50px";
+        cardContainer.style.marginTop = "70px";
         cardContainer.innerHTML = "";
 
         data.forEach(function (item) {
+
+            //let courseId = item.courseId;
+
             // Erstelle eine neue Karte
             const card = document.createElement('li');
-
             card.classList.add('card_show');
             card.classList.add('card');
+
 
             // Erstelle ein "div"-Element für den Karteninhalt
             const cardBody = document.createElement('div');
@@ -358,14 +364,22 @@
                 button.innerHTML = `<button class="btn btn-primary" onclick="beitreten('${item.courseId}')">Kurs beitreten</button>`
 
             }
+
+            cardBody.innerHTML = `<h4><a href="${item.link}" style="text-decoration: none; color: black;">${item.courseName}</a></h4><p>${item.studyingDescription}</p>`;
+
             // Füge den Karteninhalt zur Karte hinzu
+            cardBody.appendChild(button);
             card.appendChild(cardBody);
+
 
             // Füge die Karte dem DOM hinzu
             cardContainer.appendChild(card);
+
+            index++;
         });
 
         return data;
+
     }
 
     fetchAsync();
