@@ -269,7 +269,7 @@ isUserLoggedIn();
 
 async function leave(){
 
-    let response=   await fetch("http://localhost:8081/course/"+ localStorage.getItem("courseID"), {
+    let response=   await fetch("http://localhost:8081/course/4", {
         method: "DELETE",
         headers: {'token': localStorage.getItem("token")}
     });
