@@ -271,7 +271,7 @@
 
             console.log(drin);
             if (drin == true) {
-                button.innerHTML = `<button class="btn btn-primary" onclick="leave('${item.courseId}')">Kurs verlassen</button>`
+                button.innerHTML = `<button class="btn btn-danger" onclick="leave('${item.courseId}')">Kurs verlassen</button>`
 
             } else if (drin == false) {
                 button.innerHTML = `<button class="btn btn-primary" onclick="beitreten('${item.courseId}')">Kurs beitreten</button>`
@@ -306,7 +306,7 @@
         });
 
         if (response.status == 200) {
-            window.location.replace('https://ellestudent.netlify.app');
+            window.location.reload();
         } else {
             alert("Fehler beim Verlassen des Kurses");
         }
@@ -324,7 +324,7 @@
         });
 
         if (response.status === 200) {
-            window.location.replace('https://ellestudent.netlify.app/search.html');
+            window.location.reload();
         } else {
             alert("Error joining the course");
         }
