@@ -238,10 +238,6 @@ async function fetchAsync() {
 
     fetchAsync();
 
-    function saveCourseID(item) {
-        localStorage.setItem("courseId", item);
-    }
-
 
     console.log(courses);
 
@@ -257,7 +253,7 @@ async function fetchAsync() {
         cardBody.classList.add('card-body');
 
 
-        cardBody.innerHTML = `<h6><a href="${item.link}" style="text-decoration: none; color: black;">${item.title}</a></h6>
+        cardBody.innerHTML = `<h6><a onclick="saveCourseID(item.courseId)" href="${item.link}" style="text-decoration: none; color: black;">${item.title}</a></h6>
 `;
 
         // Füge den Karteninhalt zur Karte hinzu
@@ -266,6 +262,10 @@ async function fetchAsync() {
         // Füge die Karte dem DOM hinzu
         cardContainer.appendChild(card);
     });
+
+function saveCourseID(item) {
+    localStorage.setItem("courseId", item);
+}
 
     async function isUserLoggedIn(){
 if(localStorage.getItem("token") == null){
