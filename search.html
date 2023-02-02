@@ -216,6 +216,10 @@
         let data = await response.json();
         console.log(data);
 
+
+        const courseID = data.map((course) => course.id);
+        var index = 0;
+
         const cardContainer = document.getElementById('course-container');
 
         data.forEach(function (item) {
@@ -231,8 +235,7 @@
             const button = document.createElement('div');
             button.classList.add('beitretenbutton');
 
-            const courseID = item.courseId;
-            button.innerHTML = `<button class="btn btn-primary" onclick="beitreten(courseID)">Kurs beitreten</button>`
+            button.innerHTML = `<button class="btn btn-primary" onclick="beitreten(courseID[index])">Kurs beitreten</button>`
 
             cardBody.innerHTML = `<h4><a href="${item.link}" style="text-decoration: none; color: black;">${item.courseName}</a></h4><p>${item.studyingDescription}</p>`;
 
@@ -243,6 +246,8 @@
 
             // Füge die Karte dem DOM hinzu
             cardContainer.appendChild(card);
+
+            index++;
         });
 
         return data;
@@ -276,7 +281,7 @@
 
     async function beitreten(courseID) {
 
-        let response=   await fetch("http://localhost:8081/course/" + courseID.toString(), {
+        let response=   await fetch("http://localhost:8081/course/" + courseID, {
             method: "GET",
             headers: {'token': localStorage.getItem("token"),
                 'Content-Type': 'application/json'}
