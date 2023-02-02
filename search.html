@@ -227,9 +227,8 @@
             const cardBody = document.createElement('div');
             cardBody.classList.add('card-body');
 
-            console.log(item.courseId);
             cardBody.innerHTML = `<h4><a onclick="saveCourseID(item.courseId)" href="${item.link}" style="text-decoration: none; color: black;">${item.courseName}</a></h4><p>${item.studyingDescription}</p>`;
-            console.log(item.courseId);
+
             // Füge den Karteninhalt zur Karte hinzu
             card.appendChild(cardBody);
 
@@ -243,6 +242,7 @@
     fetchAsync();
 
     function saveCourseID(item) {
+        console.log(item);
         localStorage.setItem("courseId", item);
     }
 
