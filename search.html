@@ -231,7 +231,7 @@
             const button = document.createElement('div');
             button.classList.add('beitretenbutton');
 
-            button.innerHTML = `<button class="btn btn-primary" onclick="beitreten(item.courseId)">Kurs beitreten</button>`
+            button.innerHTML = `<button class="btn btn-primary" onclick="beitreten(item)">Kurs beitreten</button>`
 
             cardBody.innerHTML = `<h4><a href="${item.link}" style="text-decoration: none; color: black;">${item.courseName}</a></h4><p>${item.studyingDescription}</p>`;
 
@@ -275,7 +275,7 @@
 
     async function beitreten(item) {
 
-        let response=   await fetch("http://localhost:8081/course/" + item, {
+        let response=   await fetch("http://localhost:8081/course/" + item.courseId, {
             method: "GET",
             headers: {'token': localStorage.getItem("token"),
                 'Content-Type': 'application/json'}
